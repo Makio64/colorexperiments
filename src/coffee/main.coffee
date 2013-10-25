@@ -10,12 +10,24 @@ class Main
 		@pause = false
 		@lastTime = Date.now()
 		window.focus()
-		requestAnimFrame( @animate )
+		requestAnimationFrame( @animate )
 
 		# Entry Point 
-		# ...
-
+		colors = ["pink","yellow","orange","red","green","purple","white","darkblue","skyblue","grey"]
+		for color in colors
+			@initColor(color)
 		return
+
+	initColor:(color)->
+		$(".#{color}").mouseover((e)->
+			console.log color
+			$("##{color} div").addClass("activate")
+			$(".#{color} div").addClass("activate")
+		).mouseout((e)->
+			$("##{color} div").removeClass("activate")
+			$(".#{color} div").removeClass("activate")
+		)
+
 
 
 	animate:()=>
@@ -26,7 +38,7 @@ class Main
 			@lastTime = t
 			return
 
-		requestAnimFrame( @animate )
+		requestAnimationFrame( @animate )
 		t = Date.now()
 		dt = t - @lastTime
 		@lastTime = t
@@ -52,7 +64,7 @@ $(document).ready ->
 	)
 
 	$(window).focus(()->
-		requestAnimFrame( main.animate )
+		requestAnimationFrame( main.animate )
 		main.lastTime = Date.now()
 		main.pause = false
 	)

@@ -1,9 +1,80 @@
-body , html{
-    width   : 100%;
-    height  : 100%;
-    min-height: 100%;
-    background: #FFF;
-    font-family: Helvetica, sans-serif;
-    font-variant: normal;
-    font-weight: 300;
-}
+body,html{width:100%;height:100%;min-height:100%;background:#fafafa;font-family:Helvetica,sans-serif;font-variant:normal;font-weight:300;overflow:hidden}
+#share{text-align:right;padding:10px}
+#global{position:absolute;top:50%;left:50%;margin-top:-75px;margin-left:-250px;height:150px;width:500px;z-index:10}
+h1{margin:0 auto 10px auto;font-size:36px;text-align:center}
+h2{margin:0 auto 20px auto;font-size:18px;text-align:center}
+.color{position:relative;width:50px;height:50px;float:left;cursor:pointer;}
+.color div{display:none}
+.color .bubble{position:absolute;z-index:5;border-radius:50%;background:#f00;top:10px;left:10px;width:30px;height:30px;display:block}
+.color .bubble2{position:absolute;z-index:4;border-radius:50%;background:#000;opacity:.1;display:block;transition:all .4s;-webkit-transition:all .4s;top:25px;left:25px;}
+.color .bubble2.activate{top:0;left:0;width:50px;height:50px}
+.color.pink .bubble{background:#b0276f}
+.color.orange .bubble{background:#f90}
+.color.yellow .bubble{background:#0f0}
+.color.red .bubble{background:#bf0404}
+.color.grey .bubble{background:#808080}
+.color.white .bubble{background:#fff}
+.color.green .bubble{background:#629632}
+.color.purple .bubble{background:#443266}
+.color.skyblue .bubble{background:#00bfff}
+.color.darkblue .bubble{background:#27408b}
+.circle{border-radius:50%;background:#f00}
+.triangle{width:0;height:0;border-style:solid;border-width:0 0 0 0}
+.container{position:absolute;top:0;left:0;height:100%;min-height:100%;width:100%;}
+.container div{position:absolute;transition:all .3s;-webkit-transition:all .3s}
+#orange .triangle1{top:0;left:0;border-color:#f90 transparent transparent transparent;}
+#orange .triangle1.activate{border-width:400px 400px 0 0}
+#orange .triangle2{bottom:0;right:0;border-color:transparent transparent #f90 transparent;}
+#orange .triangle2.activate{border-width:0 0 400px 400px}
+#orange .triangle3{top:0;right:0;border-color:transparent #f90 transparent transparent;}
+#orange .triangle3.activate{border-width:0 400px 400px 0}
+#orange .triangle4{bottom:0;left:0;border-color:transparent transparent transparent #f90;}
+#orange .triangle4.activate{border-width:400px 0 0 400px}
+#white .rect1{background:#fff;top:50%;left:50%;height:0;width:1px;}
+#white .rect1.activate{top:0;left:0;width:100%;height:100%}
+#skyblue .triangle1{bottom:0;left:0;border-color:transparent transparent transparent #00bfff;}
+#skyblue .triangle1.activate{border-width:800px 0 0 400px}
+#skyblue .triangle2{bottom:0;right:0;border-color:transparent transparent #00bfff transparent;}
+#skyblue .triangle2.activate{border-width:0 0 800px 400px}
+#purple .rect1{background:#443266;top:20%;left:0;height:5%;}
+#purple .rect1.activate{width:100%}
+#purple .rect2{background:#443266;top:10%;right:0;height:5%;}
+#purple .rect2.activate{width:100%}
+#purple .rect3{background:#443266;bottom:10%;left:0;height:5%;}
+#purple .rect3.activate{width:100%}
+#purple .rect4{background:#443266;bottom:20%;right:0;height:5%;}
+#purple .rect4.activate{width:100%}
+#purple .rect5{background:#443266;top:30%;right:0;height:5%;}
+#purple .rect5.activate{width:100%}
+#purple .rect6{background:#443266;bottom:30%;left:0;height:5%;}
+#purple .rect6.activate{width:100%}
+#pink .triangle1{top:0;left:0;border-color:#b0276f transparent transparent transparent;}
+#pink .triangle1.activate{border-width:400px 400px 0 0}
+#pink .triangle2{bottom:0;right:0;border-color:transparent transparent #b0276f transparent;}
+#pink .triangle2.activate{border-width:0 0 400px 400px}
+#green .triangle1{top:50%;left:50%;border-color:transparent transparent #629632 transparent;}
+#green .triangle1.activate{margin-top:-200px;border-width:0 100px 200px 100px;margin-left:-100px}
+#green .triangle2{top:50%;left:50%;border-color:#629632 transparent transparent transparent;}
+#green .triangle2.activate{border-width:200px 100px 0 100px;margin-left:-100px}
+#red .triangle1{top:0;left:50%;margin:0;border-color:#bf0404 transparent transparent transparent;}
+#red .triangle1.activate{margin-left:-150px;border-width:200px 150px 0 150px}
+#red .triangle2{bottom:0;left:50%;margin:0;border-color:transparent transparent #bf0404 transparent;}
+#red .triangle2.activate{margin-left:-150px;border-width:0 150px 200px 150px}
+#yellow .rectTop{background:#0f0;top:0;left:0;height:200px;}
+#yellow .rectTop.activate{width:100%}
+#yellow .rectBottom{background:#0f0;bottom:0;right:0;height:200px;}
+#yellow .rectBottom.activate{width:100%}
+#darkblue .rectTop{background:#27408b;top:0;left:0;height:0;width:100%;}
+#darkblue .rectTop.activate{height:20%}
+#darkblue .rectBottom{background:#27408b;bottom:0;right:0;height:0;width:100%;}
+#darkblue .rectBottom.activate{height:20%}
+#grey .circle{background:#808080;width:0;height:0;}
+#grey .circle.activate{width:600px;height:600px}
+#grey .circle1{top:0;left:0;}
+#grey .circle1.activate{margin-top:-300px;margin-left:-300px}
+#grey .circle2{bottom:0;right:0;}
+#grey .circle2.activate{margin-bottom:-300px;margin-right:-300px}
+#grey .circle3{top:0;right:0;}
+#grey .circle3.activate{margin-top:-300px;margin-right:-300px}
+#grey .circle4{bottom:0;left:0;}
+#grey .circle4.activate{margin-bottom:-300px;margin-left:-300px}

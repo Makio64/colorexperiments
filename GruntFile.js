@@ -5,11 +5,12 @@ module.exports = function ( grunt ) {
 	var coffeesToWatch = null;
 	var filesToWatch = null;
 
-    grunt.loadNpmTasks( "grunt-contrib-watch" );
-    grunt.loadNpmTasks( "grunt-contrib-coffee" );
-	grunt.loadNpmTasks( "grunt-contrib-cssmin" );
-    grunt.loadNpmTasks( "grunt-contrib-imagemin" );
-    grunt.loadNpmTasks( "grunt-contrib-uglify" );
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-coffee');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-stylus');
 
 	grunt.event.on( "watch", function( action, filepath ) {
         var fileType = getFileType( filepath );
@@ -58,8 +59,14 @@ module.exports = function ( grunt ) {
 			pkg: grunt.file.readJSON('package.json'),
 
 			watch: {
-				files: filesToWatch,
-				tasks: [ "coffee:compile"]
+                coffee: {
+                    files: [ "src/coffee/**/*.coffee" ],
+                    tasks: [ "coffee:compile" ]
+                },
+                stylus: {
+                    files: [ "src/stylus/**/*.styl" ],
+                    tasks: [ "stylus" ]
+                },
 			},
 
 			coffee: {
@@ -72,6 +79,20 @@ module.exports = function ( grunt ) {
 					}
 				}
 			},
+
+			stylus: {
+                dist: {
+                    options: {
+                    	paths: "src/stylus/**/*.styl",
+                        compress: false
+                    }
+                },
+				compile : {
+					files : {
+						'./www/css/main.css' : 'src/stylus/**/*.styl'
+					}
+				}
+            },
 
 			uglify: {
 				main: {
@@ -109,7 +130,7 @@ module.exports = function ( grunt ) {
 
 	}
 
-    grunt.registerTask( "compile", [ "coffee:compile" ] );
+    grunt.registerTask( "compile", [ "coffee:compile", "stylus:compile" ] );
     grunt.registerTask( "imageoptim", [ "imagemin:dynamic" ] );
     grunt.registerTask( "all", [ "compile", "uglify", "imageoptim", "cssmin" ] );
 	grunt.registerTask( "default", ["compile", "watch"] );

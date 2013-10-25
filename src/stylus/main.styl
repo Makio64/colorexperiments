@@ -1,0 +1,362 @@
+pink = #B0276F
+yellow = #00FF00
+white = #FFF
+orange = #FF9900
+red = #BF0404
+green = #629632
+skyblue = #00BFFF
+darkblue = #27408B
+purple = #443266
+
+
+body , html
+	width 100%
+	height 100%
+	min-height 100%
+	background #FAFAFA
+	font-family Helvetica, sans-serif
+	font-variant normal
+	font-weight 300
+	overflow hidden
+
+#share
+	text-align right
+	padding 10px
+
+#global
+	position absolute
+	top 50%
+	left 50%
+	margin-top -75px
+	margin-left -250px
+	height 150px
+	width 500px
+	z-index 10
+
+h1
+	margin 0 auto 10px auto
+	font-size 36px
+	text-align center
+
+h2
+	margin 0 auto 20px auto
+	font-size 18px
+	text-align center
+
+.color
+	position relative
+	width 50px
+	height 50px
+	float left
+	cursor pointer
+
+	div
+		display none
+
+	.bubble
+		position absolute
+		z-index 5
+		border-radius 50%
+		background #f00
+		top 10px
+		left 10px
+		width 30px
+		height 30px
+		display block
+
+	.bubble2
+		position absolute
+		z-index 4
+		border-radius 50%
+		background #000
+		opacity .1
+		display block
+		transition all .4s
+		-webkit-transition all .4s
+		top 25px
+		left 25px
+		&.activate	
+			top 0
+			left 0
+			width 50px
+			height 50px
+
+	&.pink .bubble
+		background pink
+	&.orange .bubble
+		background orange
+	&.yellow .bubble
+		background yellow
+	&.red .bubble
+		background red
+	&.grey .bubble
+		background grey
+	&.white .bubble
+		background white
+	&.green .bubble
+		background green
+	&.purple .bubble
+		background purple
+	&.skyblue .bubble
+		background skyblue
+	&.darkblue .bubble
+		background darkblue
+	
+
+.circle
+	border-radius 50%
+	background #f00
+
+.triangle
+	width 0px
+	height 0px
+	border-style solid
+	border-width 0 0 0 0
+
+.container
+	position absolute
+	top 0
+	left 0
+	height 100%
+	min-height 100%
+	width 100%
+
+	div
+		position absolute
+		transition all .3s
+		-webkit-transition all .3s
+
+#orange
+
+	.triangle1
+		top 0
+		left 0
+		border-color orange transparent transparent transparent
+		&.activate
+			border-width 400px 400px 0 0
+	.triangle2
+		bottom 0
+		right 0
+		border-color transparent transparent orange transparent
+		&.activate
+			border-width 0 0 400px 400px
+
+	.triangle3
+		top 0
+		right 0
+		border-color  transparent orange transparent transparent
+		&.activate
+			border-width 0 400px 400px 0 
+
+	.triangle4
+		bottom 0
+		left 0
+		border-color transparent transparent transparent orange
+		&.activate
+			border-width 400px 0 0 400px
+
+
+#white
+	.rect1
+		background white
+		top 50%
+		left 50%
+		height 0
+		width 1px
+		&.activate
+			top 0
+			left 0
+			width 100%
+			height 100%
+
+#skyblue
+
+	.triangle1
+		bottom 0
+		left 0
+		border-color  transparent transparent transparent skyblue
+		&.activate
+			border-width 800px 0 0 400px
+	.triangle2
+		bottom 0
+		right 0
+		border-color transparent transparent skyblue transparent
+		&.activate
+			border-width 0 0 800px 400px
+
+#purple
+
+	.rect1
+		background purple
+		top 20%
+		left 0
+		height 5%
+		&.activate
+			width 100%
+
+	.rect2
+		background purple
+		top 10%
+		right 0
+		height 5%
+		&.activate
+			width 100%
+
+	.rect3
+		background purple
+		bottom 10%
+		left 0
+		height 5%
+		&.activate
+			width 100%
+
+	.rect4
+		background purple
+		bottom 20%
+		right 0
+		height 5%
+		&.activate
+			width 100%
+	.rect5
+		background purple
+		top 30%
+		right 0
+		height 5%
+		&.activate
+			width 100%
+
+	.rect6
+		background purple
+		bottom 30%
+		left 0
+		height 5%
+		&.activate
+			width 100%
+
+
+#pink
+
+	.triangle1
+		top 0
+		left 0
+		border-color pink transparent transparent transparent
+		&.activate
+			border-width 400px 400px 0 0
+	.triangle2
+		bottom 0
+		right 0
+		border-color transparent transparent pink transparent
+		&.activate
+			border-width 0 0 400px 400px
+
+#green
+
+	.triangle1
+		top 50%
+		left 50%
+		border-color  transparent transparent green transparent;
+		&.activate
+			margin-top -200px
+			border-width 0 100px 200px 100px
+			margin-left -100px
+	
+	.triangle2
+		top 50%
+		left 50%
+		border-color  green transparent transparent transparent;
+		&.activate
+			border-width 200px 100px 0 100px
+			margin-left -100px
+
+
+#red
+
+	.triangle1
+		top 0
+		left 50%
+		margin 0
+		border-color red transparent transparent transparent
+		&.activate
+			margin-left -150px
+			border-width 200px 150px 0 150px
+	.triangle2
+		bottom 0
+		left 50%
+		margin 0		
+		border-color transparent transparent red transparent
+		&.activate
+			margin-left -150px
+			border-width 0 150px 200px 150px
+
+
+#yellow
+	.rectTop
+		background yellow
+		top 0
+		left 0
+		height 200px
+		&.activate
+			width 100%
+
+	.rectBottom
+		background yellow
+		bottom 0
+		right 0
+		height 200px
+		&.activate
+			width 100%
+
+#darkblue
+	.rectTop
+		background darkblue
+		top 0
+		left 0
+		height 0
+		width 100%
+		&.activate
+			height 20%
+
+	.rectBottom
+		background darkblue
+		bottom 0
+		right 0
+		height 0
+		width 100%
+		&.activate
+			height 20%
+
+
+#grey
+	radius = 300
+	.circle
+		background grey
+		width 0
+		height 0
+		&.activate
+			width radius*2px
+			height radius*2px
+
+	.circle1
+		top 0
+		left 0
+		&.activate
+			margin-top radius*-1px
+			margin-left radius*-1px
+	.circle2
+		bottom 0
+		right 0
+		&.activate
+			margin-bottom radius*-1px
+			margin-right radius*-1px
+	.circle3
+		top 0
+		right 0
+		&.activate
+			margin-top radius*-1px
+			margin-right radius*-1px
+	.circle4
+		bottom 0
+		left 0
+		&.activate
+			margin-bottom radius*-1px
+			margin-left radius*-1px
