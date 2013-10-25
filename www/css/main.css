@@ -6,7 +6,7 @@ h2{margin:0 auto 20px auto;font-size:18px;text-align:center}
 .color{position:relative;width:50px;height:50px;float:left;cursor:pointer;}
 .color div{display:none}
 .color .bubble{position:absolute;z-index:5;border-radius:50%;background:#f00;top:10px;left:10px;width:30px;height:30px;display:block}
-.color .bubble2{position:absolute;z-index:4;border-radius:50%;background:#000;opacity:.1;display:block;transition:all .4s;-webkit-transition:all .4s;top:25px;left:25px;}
+.color .bubble2{position:absolute;z-index:4;border-radius:50%;background:#000;opacity:.1;display:block;transition:all .4s;-webkit-transition:all .4s;top:25px;left:25px;width:0;height:0;}
 .color .bubble2.activate{top:0;left:0;width:50px;height:50px}
 .color.pink .bubble{background:#b0276f}
 .color.orange .bubble{background:#f90}
@@ -36,17 +36,17 @@ h2{margin:0 auto 20px auto;font-size:18px;text-align:center}
 #skyblue .triangle1.activate{border-width:800px 0 0 400px}
 #skyblue .triangle2{bottom:0;right:0;border-color:transparent transparent #00bfff transparent;}
 #skyblue .triangle2.activate{border-width:0 0 800px 400px}
-#grey .rect1{background:#d2dee4;top:20%;left:0;height:5%;}
+#grey .rect1{background:#d2dee4;top:20%;left:0;height:5%;width:0;}
 #grey .rect1.activate{width:100%}
-#grey .rect2{background:#d2dee4;top:10%;right:0;height:5%;}
+#grey .rect2{background:#d2dee4;top:10%;right:0;height:5%;width:0;}
 #grey .rect2.activate{width:100%}
-#grey .rect3{background:#d2dee4;bottom:10%;left:0;height:5%;}
+#grey .rect3{background:#d2dee4;bottom:10%;left:0;height:5%;width:0;}
 #grey .rect3.activate{width:100%}
-#grey .rect4{background:#d2dee4;bottom:20%;right:0;height:5%;}
+#grey .rect4{background:#d2dee4;bottom:20%;right:0;height:5%;width:0;}
 #grey .rect4.activate{width:100%}
-#grey .rect5{background:#d2dee4;top:30%;right:0;height:5%;}
+#grey .rect5{background:#d2dee4;top:30%;right:0;height:5%;width:0;}
 #grey .rect5.activate{width:100%}
-#grey .rect6{background:#d2dee4;bottom:30%;left:0;height:5%;}
+#grey .rect6{background:#d2dee4;bottom:30%;left:0;height:5%;width:0;}
 #grey .rect6.activate{width:100%}
 #pink .triangle1{top:0;left:0;border-color:#b0276f transparent transparent transparent;}
 #pink .triangle1.activate{border-width:400px 400px 0 0}
@@ -60,9 +60,9 @@ h2{margin:0 auto 20px auto;font-size:18px;text-align:center}
 #red .triangle1.activate{margin-left:-150px;border-width:200px 150px 0 150px}
 #red .triangle2{bottom:0;left:50%;margin:0;border-color:transparent transparent #bf0404 transparent;}
 #red .triangle2.activate{margin-left:-150px;border-width:0 150px 200px 150px}
-#yellow .rectTop{background:#0f0;top:0;left:0;height:200px;}
+#yellow .rectTop{background:#0f0;top:0;left:0;height:200px;width:0;}
 #yellow .rectTop.activate{width:100%}
-#yellow .rectBottom{background:#0f0;bottom:0;right:0;height:200px;}
+#yellow .rectBottom{background:#0f0;bottom:0;right:0;height:200px;width:0;}
 #yellow .rectBottom.activate{width:100%}
 #darkblue .rectTop{background:#27408b;top:0;left:0;height:0;width:100%;}
 #darkblue .rectTop.activate{height:20%}
