@@ -6,6 +6,8 @@ red = #BF0404
 green = #49E20E
 grey = #D2DEE4
 skyblue = #00BFFF
+skyblueLight = #73DCFF
+skyblueDark = #00BFFF
 darkblue = #27408B
 purple = #443266
 
@@ -177,15 +179,54 @@ h2
 	.triangle1
 		bottom 0
 		left 0
+		border-color  transparent transparent transparent skyblueLight
+		&.activate
+			transition-timing-function: ease-out;
+			border-width 800px 0 0 400px
+
+	.triangle2
+		bottom 0
+		right 0
+		border-color transparent transparent skyblueLight transparent
+		&.activate
+			transition-timing-function: ease-out;
+			border-width 0 0 800px 400px
+
+	.triangle3
+		bottom 0
+		left 0
 		border-color  transparent transparent transparent skyblue
 		&.activate
-			border-width 800px 0 0 400px
-	.triangle2
+			transition-delay .05s
+			border-width 700px 0 0 350px
+
+	.triangle4
 		bottom 0
 		right 0
 		border-color transparent transparent skyblue transparent
 		&.activate
-			border-width 0 0 800px 400px
+			transition-delay .05s
+			border-width 0 0 700px 350px
+
+	.triangle5
+		bottom 0
+		left 0
+		border-color  transparent transparent transparent #FFF
+		opacity .2
+		&.activate
+			transition-timing-function: ease-out;
+			transition-delay .1s
+			border-width 600px 0 0 300px
+
+	.triangle6
+		bottom 0
+		right 0
+		border-color transparent transparent #FFF transparent
+		opacity .2
+		&.activate
+			transition-timing-function: ease-out;
+			transition-delay .1s
+			border-width 0 0 600px 300px
 
 #grey
 
