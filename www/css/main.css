@@ -21,15 +21,15 @@ h2{margin:0 auto 20px auto;font-size:18px;text-align:center}
 .circle{border-radius:50%;background:#f00}
 .triangle{width:0;height:0;border-style:solid;border-width:0 0 0 0}
 .container{position:absolute;top:0;left:0;height:100%;min-height:100%;width:100%;}
-.container div{position:absolute;transition:all .3s;-webkit-transition:all .3s}
+.container div{position:absolute;transition:all .3s}
 #orange .triangle1{top:0;left:0;border-color:#f90 transparent transparent transparent;}
-#orange .triangle1.activate{border-width:400px 400px 0 0}
+#orange .triangle1.activate{transition:all 800ms cubic-bezier(.175,.885,.32,1.275);border-width:400px 400px 0 0}
 #orange .triangle2{bottom:0;right:0;border-color:transparent transparent #f90 transparent;}
-#orange .triangle2.activate{border-width:0 0 400px 400px}
+#orange .triangle2.activate{transition:all 800ms cubic-bezier(.175,.885,.32,1.275);border-width:0 0 400px 400px}
 #orange .triangle3{top:0;right:0;border-color:transparent #f90 transparent transparent;}
-#orange .triangle3.activate{border-width:0 400px 400px 0}
+#orange .triangle3.activate{transition:all 800ms cubic-bezier(.175,.885,.32,1.275);border-width:0 400px 400px 0}
 #orange .triangle4{bottom:0;left:0;border-color:transparent transparent transparent #f90;}
-#orange .triangle4.activate{border-width:400px 0 0 400px}
+#orange .triangle4.activate{transition:all 800ms cubic-bezier(.175,.885,.32,1.275);border-width:400px 0 0 400px}
 #white .rect1{background:#fff;top:50%;left:50%;height:0;width:1px;}
 #white .rect1.activate{top:0;left:0;width:100%;height:100%}
 #skyblue .triangle1{bottom:0;left:0;border-color:transparent transparent transparent #73dcff;}
@@ -57,21 +57,45 @@ h2{margin:0 auto 20px auto;font-size:18px;text-align:center}
 #grey .rect6{background:#d2dee4;bottom:30%;left:0;height:5%;width:0;}
 #grey .rect6.activate{width:100%}
 #pink .triangle1{top:0;left:0;border-color:#b0276f transparent transparent transparent;}
-#pink .triangle1.activate{border-width:400px 400px 0 0}
+#pink .triangle1.activate{transition:all 700ms cubic-bezier(.175,.885,.32,1.275);border-width:400px 400px 0 0}
 #pink .triangle2{bottom:0;right:0;border-color:transparent transparent #b0276f transparent;}
-#pink .triangle2.activate{border-width:0 0 400px 400px}
+#pink .triangle2.activate{transition:all 700ms cubic-bezier(.175,.885,.32,1.275);border-width:0 0 400px 400px}
+#pink .triangle3{top:0;left:0;border-color:#d85a9c transparent transparent transparent;}
+#pink .triangle3.activate{transition:all 700ms cubic-bezier(.175,.885,.32,1.275);border-width:420px 420px 0 0}
+#pink .triangle4{bottom:0;right:0;border-color:transparent transparent #d85a9c transparent;}
+#pink .triangle4.activate{transition:all 700ms cubic-bezier(.175,.885,.32,1.275);border-width:0 0 420px 420px}
 #green .triangle1{top:50%;left:50%;border-color:transparent transparent #49e20e transparent;}
-#green .triangle1.activate{margin-top:-399px;border-width:0 100px 400px 100px;margin-left:-100px}
+#green .triangle1.activate{transition:all 400ms cubic-bezier(.295,.36,.095,.99);margin-top:-799px;border-width:0 800px 800px 800px;margin-left:-800px}
 #green .triangle2{top:50%;left:50%;border-color:#49e20e transparent transparent transparent;}
-#green .triangle2.activate{border-width:400px 100px 0 100px;margin-left:-100px}
+#green .triangle2.activate{transition:all 400ms cubic-bezier(.295,.36,.095,.99);border-width:800px 800px 0 800px;margin-left:-800px}
+#green .triangle3{top:50%;left:50%;border-color:transparent transparent #fafafa transparent;}
+#green .triangle3.activate{transition:all 600ms cubic-bezier(.295,.36,.095,.99);margin-top:-399px;border-width:0 400px 400px 400px;margin-left:-400px;transition-delay:.15s}
+#green .triangle4{top:50%;left:50%;border-color:#fafafa transparent transparent transparent;}
+#green .triangle4.activate{transition:all 600ms cubic-bezier(.295,.36,.095,.99);border-width:400px 400px 0 400px;margin-left:-400px;transition-delay:.15s}
 #red .triangle1{top:0;left:50%;margin:0;border-color:#bf0404 transparent transparent transparent;}
-#red .triangle1.activate{margin-left:-150px;border-width:200px 150px 0 150px}
+#red .triangle1.activate{transition:all 600ms cubic-bezier(.295,.36,.095,.99);margin-left:-150px;border-width:200px 150px 0 150px}
 #red .triangle2{bottom:0;left:50%;margin:0;border-color:transparent transparent #bf0404 transparent;}
-#red .triangle2.activate{margin-left:-150px;border-width:0 150px 200px 150px}
+#red .triangle2.activate{transition:all 600ms cubic-bezier(.25,.46,.45,.94);margin-left:-150px;border-width:0 150px 200px 150px}
+#red .triangle3{top:0;left:50%;margin:0;border-color:#fafafa transparent transparent transparent;}
+#red .triangle3.activate{transition:all 600ms cubic-bezier(.295,.36,.095,.99);margin-left:-140px;border-width:185px 140px 0 140px;transition-delay:.15s}
+#red .triangle4{bottom:0;left:50%;margin:0;border-color:transparent transparent #fafafa transparent;}
+#red .triangle4.activate{transition:all 600ms cubic-bezier(.25,.46,.45,.94);margin-left:-140px;border-width:0 140px 185px 140px;transition-delay:.15s}
+#red .triangle5{top:0;left:50%;margin:0;border-color:#bf0404 transparent transparent transparent;}
+#red .triangle5.activate{transition:all 600ms cubic-bezier(.295,.36,.095,.99);margin-left:-150px;border-width:200px 150px 0 150px;transition-delay:.3s}
+#red .triangle6{bottom:0;left:50%;margin:0;border-color:transparent transparent #bf0404 transparent;}
+#red .triangle6.activate{transition:all 600ms cubic-bezier(.25,.46,.45,.94);margin-left:-150px;border-width:0 150px 200px 150px;transition-delay:.3s}
 #yellow .rectTop{background:#0f0;top:0;left:0;height:200px;width:0;}
 #yellow .rectTop.activate{width:100%}
 #yellow .rectBottom{background:#0f0;bottom:0;right:0;height:200px;width:0;}
 #yellow .rectBottom.activate{width:100%}
+#yellow .rectTop2{background:#bfff40;top:10px;right:0;height:180px;width:0;}
+#yellow .rectTop2.activate{transition:all 500ms cubic-bezier(.25,.46,.45,.94);transition-delay:.3s;width:100%}
+#yellow .rectBottom2{background:#bfff40;bottom:10px;left:0;height:180px;width:0;}
+#yellow .rectBottom2.activate{transition:all 500ms cubic-bezier(.25,.46,.45,.94);transition-delay:.3s;width:100%}
+#yellow .rectTop3{background:#d0ff73;top:0;right:0;height:200px;width:0;}
+#yellow .rectTop3.activate{transition:all 800ms cubic-bezier(.25,.46,.45,.94);transition-delay:.8s;width:100%}
+#yellow .rectBottom3{background:#d0ff73;bottom:0;left:0;height:200px;width:0;}
+#yellow .rectBottom3.activate{transition:all 800ms cubic-bezier(.25,.46,.45,.94);transition-delay:.8s;width:100%}
 #darkblue .rectTop{background:#27408b;top:0;left:0;height:0;width:100%;}
 #darkblue .rectTop.activate{height:20%}
 #darkblue .rectBottom{background:#27408b;bottom:0;right:0;height:0;width:100%;}

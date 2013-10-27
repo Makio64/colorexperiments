@@ -20,7 +20,6 @@ class Main
 
 	initColor:(color)->
 		$(".#{color}").mouseover((e)->
-			console.log color
 			$("##{color} div").addClass("activate")
 			$(".#{color} div").addClass("activate")
 		).mouseout((e)->

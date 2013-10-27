@@ -27,7 +27,6 @@ Main = (function() {
 
   Main.prototype.initColor = function(color) {
     return $("." + color).mouseover(function(e) {
-      console.log(color);
       $("#" + color + " div").addClass("activate");
       return $("." + color + " div").addClass("activate");
     }).mouseout(function(e) {
