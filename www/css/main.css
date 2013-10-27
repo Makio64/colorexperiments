@@ -58,6 +58,18 @@ h2{margin:0 auto 30px auto;font-size:18px;text-align:center;letter-spacing:0}
 #grey .rect5.activate{width:100%}
 #grey .rect6{background:#d2dee4;bottom:30%;left:0;height:5%;width:0;}
 #grey .rect6.activate{width:100%}
+#grey .rect7{background:#e3edf2;top:20%;left:0;height:5%;width:0;}
+#grey .rect7.activate{transition:all 600ms cubic-bezier(.25,.46,.45,.94);transition-delay:.15s;width:100%}
+#grey .rect8{background:#e3edf2;top:10%;right:0;height:5%;width:0;}
+#grey .rect8.activate{transition:all 600ms cubic-bezier(.25,.46,.45,.94);transition-delay:.15s;width:100%}
+#grey .rect9{background:#e3edf2;bottom:10%;left:0;height:5%;width:0;}
+#grey .rect9.activate{transition:all 600ms cubic-bezier(.25,.46,.45,.94);transition-delay:.15s;width:100%}
+#grey .rect10{background:#e3edf2;bottom:20%;right:0;height:5%;width:0;}
+#grey .rect10.activate{transition:all 600ms cubic-bezier(.25,.46,.45,.94);transition-delay:.15s;width:100%}
+#grey .rect11{background:#e3edf2;top:30%;right:0;height:5%;width:0;}
+#grey .rect11.activate{transition:all 600ms cubic-bezier(.25,.46,.45,.94);transition-delay:.15s;width:100%}
+#grey .rect12{background:#e3edf2;bottom:30%;left:0;height:5%;width:0;}
+#grey .rect12.activate{transition:all 600ms cubic-bezier(.25,.46,.45,.94);transition-delay:.15s;width:100%}
 #pink .triangle1{top:0;left:0;border-color:#b0276f transparent transparent transparent;}
 #pink .triangle1.activate{transition:all 1000ms cubic-bezier(.175,.885,.32,1.275);border-width:400px 400px 0 0}
 #pink .triangle2{bottom:0;right:0;border-color:transparent transparent #b0276f transparent;}
