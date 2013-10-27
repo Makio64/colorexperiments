@@ -1,5 +1,6 @@
 pink = #B0276F
 pinkLight = #D85A9C
+pinkDark = #ECA0C8
 yellow = #00FF00
 yellowLight = #BFFF40
 yellowDark = #D0FF73
@@ -20,7 +21,8 @@ body , html
 	height 100%
 	min-height 100%
 	background #FAFAFA
-	font-family Helvetica, sans-serif
+	color #2B2B2B
+	font-family 'Abel', Helvetica, sans-serif
 	font-variant normal
 	font-weight 300
 	overflow hidden
@@ -40,14 +42,17 @@ body , html
 	z-index 10
 
 h1
-	margin 0 auto 10px auto
-	font-size 36px
+	margin 0 auto 6px auto
+	font-size 30px
 	text-align center
+	letter-spacing 7
+	font-weight 400
 
 h2
-	margin 0 auto 20px auto
+	margin 0 auto 30px auto
 	font-size 18px
 	text-align center
+	letter-spacing 0
 
 .color
 	position relative
@@ -169,12 +174,27 @@ h2
 
 #white
 	.rect1
+		background #333
+		opacity .03
+		top 50%
+		left 50%
+		height 0
+		width 1px
+		&.activate
+			transition: all 600ms cubic-bezier(0.250, 0.460, 0.450, 0.940); /* easeOutQuad */
+			top 0
+			left 0
+			width 100%
+			height 100%
+	.rect2
 		background white
 		top 50%
 		left 50%
 		height 0
 		width 1px
 		&.activate
+			transition: all 600ms cubic-bezier(0.250, 0.460, 0.450, 0.940); /* easeOutQuad */
+			transition-delay .3s
 			top 0
 			left 0
 			width 100%
@@ -187,7 +207,7 @@ h2
 		left 0
 		border-color  transparent transparent transparent skyblueLight
 		&.activate
-			transition-timing-function: ease-out;
+			transition: all 500ms cubic-bezier(0.250, 0.460, 0.450, 0.940); /* easeOutQuad */
 			border-width 800px 0 0 400px
 
 	.triangle2
@@ -195,7 +215,7 @@ h2
 		right 0
 		border-color transparent transparent skyblueLight transparent
 		&.activate
-			transition-timing-function: ease-out;
+			transition: all 500ms cubic-bezier(0.250, 0.460, 0.450, 0.940); /* easeOutQuad */
 			border-width 0 0 800px 400px
 
 	.triangle3
@@ -203,6 +223,7 @@ h2
 		left 0
 		border-color  transparent transparent transparent skyblue
 		&.activate
+			transition: all 500ms cubic-bezier(0.250, 0.460, 0.450, 0.940); /* easeOutQuad */
 			transition-delay .05s
 			border-width 700px 0 0 350px
 
@@ -211,6 +232,7 @@ h2
 		right 0
 		border-color transparent transparent skyblue transparent
 		&.activate
+			transition: all 500ms cubic-bezier(0.250, 0.460, 0.450, 0.940); /* easeOutQuad */
 			transition-delay .05s
 			border-width 0 0 700px 350px
 
@@ -220,7 +242,7 @@ h2
 		border-color  transparent transparent transparent #FFF
 		opacity .2
 		&.activate
-			transition-timing-function: ease-out;
+			transition: all 500ms cubic-bezier(0.250, 0.460, 0.450, 0.940); /* easeOutQuad */
 			transition-delay .1s
 			border-width 600px 0 0 300px
 
@@ -297,14 +319,15 @@ h2
 		left 0
 		border-color pink transparent transparent transparent
 		&.activate
-			transition: all 700ms cubic-bezier(0.175, 0.885, 0.320, 1.275); /* easeOutBack */
+			transition: all 1000ms cubic-bezier(0.175, 0.885, 0.320, 1.275); /* easeOutBack */
 			border-width 400px 400px 0 0
+	
 	.triangle2
 		bottom 0
 		right 0
 		border-color transparent transparent pink transparent
 		&.activate
-			transition: all 700ms cubic-bezier(0.175, 0.885, 0.320, 1.275); /* easeOutBack */
+			transition: all 1000ms cubic-bezier(0.175, 0.885, 0.320, 1.275); /* easeOutBack */
 			border-width 0 0 400px 400px
 
 	.triangle3
@@ -312,7 +335,7 @@ h2
 		left 0
 		border-color pinkLight transparent transparent transparent
 		&.activate
-			transition: all 700ms cubic-bezier(0.175, 0.885, 0.320, 1.275); /* easeOutBack */
+			transition: all 1000ms cubic-bezier(0.175, 0.885, 0.320, 1.275); /* easeOutBack */
 			border-width 420px 420px 0 0
 
 	.triangle4
@@ -320,8 +343,27 @@ h2
 		right 0
 		border-color transparent transparent pinkLight transparent
 		&.activate
-			transition: all 700ms cubic-bezier(0.175, 0.885, 0.320, 1.275); /* easeOutBack */
+			transition: all 1000ms cubic-bezier(0.175, 0.885, 0.320, 1.275); /* easeOutBack */
 			border-width 0 0 420px 420px
+	
+	.triangle5
+		top 0
+		left 0
+		border-color pinkDark transparent transparent transparent
+		&.activate
+			transition: all 600ms cubic-bezier(0.250, 0.460, 0.450, 0.940); /* easeOutQuad */
+			border-width 400px 400px 0 0
+			transition-delay .4s
+
+	.triangle6
+		bottom 0
+		right 0
+		border-color transparent transparent pinkDark transparent
+		&.activate
+			transition: all 600ms cubic-bezier(0.250, 0.460, 0.450, 0.940); /* easeOutQuad */
+			border-width 0 0 400px 400px
+			transition-delay .4s
+
 
 #green
 
@@ -481,7 +523,7 @@ h2
 		width 0
 		&.activate
 			transition: all 800ms cubic-bezier(0.250, 0.460, 0.450, 0.940); /* easeOutQuad */
-			transition-delay: 0.8s;
+			transition-delay: 0.45s;
 			width 100%
 
 	.rectBottom3
@@ -492,7 +534,7 @@ h2
 		width 0
 		&.activate
 			transition: all 800ms cubic-bezier(0.250, 0.460, 0.450, 0.940); /* easeOutQuad */
-			transition-delay: 0.8s;
+			transition-delay: 0.45s;
 			width 100%
 
 #darkblue
@@ -501,8 +543,10 @@ h2
 		top 0
 		left 0
 		height 0
+		opacity .5
 		width 100%
 		&.activate
+			transition: all 700ms cubic-bezier(0.250, 0.460, 0.450, 0.940); /* easeOutQuad */
 			height 20%
 
 	.rectBottom
@@ -510,13 +554,62 @@ h2
 		bottom 0
 		right 0
 		height 0
+		opacity .5
 		width 100%
 		&.activate
+			transition: all 700ms cubic-bezier(0.250, 0.460, 0.450, 0.940); /* easeOutQuad */
 			height 20%
 
+	.rectTop2
+		background darkblue
+		top 0
+		left 0
+		height 0
+		width 100%
+		opacity .5
+		&.activate
+			transition: all 700ms cubic-bezier(0.250, 0.460, 0.450, 0.940); /* easeOutQuad */
+			height 20%
+			transition-delay: 0.25s;
+
+	.rectBottom2
+		background darkblue
+		bottom 0
+		right 0
+		height 0
+		opacity .5
+		width 100%
+		&.activate
+			transition: all 700ms cubic-bezier(0.250, 0.460, 0.450, 0.940); /* easeOutQuad */
+			height 20%
+			transition-delay: 0.25s;
+
+	.rectTop3
+		background darkblue
+		top 0
+		left 0
+		height 0
+		width 100%
+		opacity .5
+		&.activate
+			transition: all 700ms cubic-bezier(0.250, 0.460, 0.450, 0.940); /* easeOutQuad */
+			height 20%
+			transition-delay: 0.35s;
+
+	.rectBottom3
+		background darkblue
+		bottom 0
+		right 0
+		height 0
+		opacity .5
+		width 100%
+		&.activate
+			transition: all 700ms cubic-bezier(0.250, 0.460, 0.450, 0.940); /* easeOutQuad */
+			height 20%
+			transition-delay: 0.35s;
 
 #purple
-	radius = 100
+	radius = 200
 	.circle
 		background purple
 		width 0
@@ -530,22 +623,61 @@ h2
 		left 0
 		&.activate
 			margin-top radius*-1px
-			margin-left radius*-1px
+			margin-left radius*-1.5px
+			transition: all 500ms cubic-bezier(0.250, 0.460, 0.450, 0.940); /* easeOutQuad */
 	.circle2
 		bottom 50%
 		right 0
 		&.activate
 			margin-bottom radius*-1px
-			margin-right radius*-1px
+			margin-right radius*-1.5px
+			transition: all 500ms cubic-bezier(0.250, 0.460, 0.450, 0.940); /* easeOutQuad */
 	.circle3
 		top 0
 		right 50%
 		&.activate
-			margin-top radius*-1px
+			margin-top radius*-1.5px
 			margin-right radius*-1px
+			transition: all 500ms cubic-bezier(0.250, 0.460, 0.450, 0.940); /* easeOutQuad */
 	.circle4
 		bottom 0
 		left 50%
 		&.activate
-			margin-bottom radius*-1px
+			margin-bottom radius*-1.5px
 			margin-left radius*-1px
+			transition: all 500ms cubic-bezier(0.250, 0.460, 0.450, 0.940); /* easeOutQuad */
+
+	radius = 60
+
+	.circle5
+		background #FAFAFA
+		top 50%
+		left 0
+		&.activate
+			margin-top radius*-1px
+			margin-left radius*-1.5px
+			transition: all 500ms cubic-bezier(0.250, 0.460, 0.450, 0.940); /* easeOutQuad */
+	.circle6
+		background #FAFAFA
+		bottom 50%
+		right 0
+		&.activate
+			margin-bottom radius*-1px
+			margin-right radius*-1.5px
+			transition: all 500ms cubic-bezier(0.250, 0.460, 0.450, 0.940); /* easeOutQuad */
+	.circle7
+		background #FAFAFA
+		top 0
+		right 50%
+		&.activate
+			margin-top radius*-1.5px
+			margin-right radius*-1px
+			transition: all 500ms cubic-bezier(0.250, 0.460, 0.450, 0.940); /* easeOutQuad */
+	.circle8
+		background #FAFAFA
+		bottom 0
+		left 50%
+		&.activate
+			margin-bottom radius*-1.5px
+			margin-left radius*-1px
+			transition: all 500ms cubic-bezier(0.250, 0.460, 0.450, 0.940); /* easeOutQuad */
