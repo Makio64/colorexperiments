@@ -1,16 +1,20 @@
 body,html{width:100%;height:100%;min-height:100%;background:#fafafa;color:#2b2b2b;font-family:'Abel',Helvetica,sans-serif;font-variant:normal;font-weight:300;overflow:hidden}
-#share{text-align:right;padding:10px}
+#share{position:absolute;width:300px;overflow:auto;top:0;right:10px;z-index:9;text-align:right;padding:10px}
 #global{position:absolute;top:50%;left:50%;margin-top:-75px;margin-left:-250px;height:150px;width:500px;z-index:10}
 h1{margin:0 auto 6px auto;font-size:30px;text-align:center;letter-spacing:7;font-weight:400}
 h2{margin:0 auto 30px auto;font-size:18px;text-align:center;letter-spacing:0}
+#about{display:none;position:absolute;bottom:0;left:50%;margin-left:-250px;width:480px;height:0;overflow:hidden;padding:20px;font-size:16px;line-height:24px;text-align:center;color:#6b6b6b;z-index:6;opacity:.7;transition:all .4s;}
+#about:hover{height:100px}
+.bubbles{overflow:auto}
+.title{opacity:.6;font-size:16px;padding:10px;text-align:center}
 .color{position:relative;width:50px;height:50px;float:left;cursor:pointer;}
 .color div{display:none}
 .color .bubble{position:absolute;z-index:5;border-radius:50%;background:#f00;top:10px;left:10px;width:30px;height:30px;display:block}
-.color .bubble2{position:absolute;z-index:4;border-radius:50%;background:#000;opacity:.1;display:block;transition:all .4s;-webkit-transition:all .4s;top:25px;left:25px;width:0;height:0;}
+.color .bubble2{position:absolute;z-index:4;border-radius:50%;background:#000;opacity:.1;display:block;transition:all .4s;top:25px;left:25px;width:0;height:0;}
 .color .bubble2.activate{top:0;left:0;width:50px;height:50px}
 .color.pink .bubble{background:#b0276f}
 .color.orange .bubble{background:#f90}
-.color.yellow .bubble{background:#0f0}
+.color.yellow .bubble{background:#ffd800}
 .color.red .bubble{background:#bf0404}
 .color.grey .bubble{background:#d2dee4}
 .color.white .bubble{background:#fff}
@@ -30,10 +34,10 @@ h2{margin:0 auto 30px auto;font-size:18px;text-align:center;letter-spacing:0}
 #orange .triangle3.activate{transition:all 800ms cubic-bezier(.175,.885,.32,1.275);border-width:0 400px 400px 0}
 #orange .triangle4{bottom:0;left:0;border-color:transparent transparent transparent #f90;}
 #orange .triangle4.activate{transition:all 800ms cubic-bezier(.175,.885,.32,1.275);border-width:400px 0 0 400px}
-#white .rect1{background:#333;opacity:.03;top:50%;left:50%;height:0;width:1px;}
-#white .rect1.activate{transition:all 600ms cubic-bezier(.25,.46,.45,.94);top:0;left:0;width:100%;height:100%}
-#white .rect2{background:#fff;top:50%;left:50%;height:0;width:1px;}
-#white .rect2.activate{transition:all 600ms cubic-bezier(.25,.46,.45,.94);transition-delay:.3s;top:0;left:0;width:100%;height:100%}
+#white .rect1{border-radius:50%;background:#333;opacity:.03;top:50%;left:50%;height:0;width:0;margin:0;}
+#white .rect1.activate{transition:all 1600ms cubic-bezier(.25,.46,.45,.94);width:3000px;height:3000px;margin-top:-1500px;margin-left:-1500px}
+#white .rect2{margin:0;border-radius:50%;background:#fff;top:50%;left:50%;height:0;width:1px;}
+#white .rect2.activate{transition:all 1600ms cubic-bezier(.25,.46,.45,.94);transition-delay:.3s;margin-top:-1500px;margin-left:-1500px;width:3000px;height:3000px}
 #skyblue .triangle1{bottom:0;left:0;border-color:transparent transparent transparent #73dcff;}
 #skyblue .triangle1.activate{transition:all 500ms cubic-bezier(.25,.46,.45,.94);border-width:800px 0 0 400px}
 #skyblue .triangle2{bottom:0;right:0;border-color:transparent transparent #73dcff transparent;}
@@ -82,6 +86,7 @@ h2{margin:0 auto 30px auto;font-size:18px;text-align:center;letter-spacing:0}
 #pink .triangle5.activate{transition:all 600ms cubic-bezier(.25,.46,.45,.94);border-width:400px 400px 0 0;transition-delay:.4s}
 #pink .triangle6{bottom:0;right:0;border-color:transparent transparent #eca0c8 transparent;}
 #pink .triangle6.activate{transition:all 600ms cubic-bezier(.25,.46,.45,.94);border-width:0 0 400px 400px;transition-delay:.4s}
+#green{z-index:3;}
 #green .triangle1{top:50%;left:50%;border-color:transparent transparent #49e20e transparent;}
 #green .triangle1.activate{transition:all 400ms cubic-bezier(.295,.36,.095,.99);margin-top:-799px;border-width:0 800px 800px 800px;margin-left:-800px}
 #green .triangle2{top:50%;left:50%;border-color:#49e20e transparent transparent transparent;}
@@ -102,17 +107,17 @@ h2{margin:0 auto 30px auto;font-size:18px;text-align:center;letter-spacing:0}
 #red .triangle5.activate{transition:all 600ms cubic-bezier(.295,.36,.095,.99);margin-left:-150px;border-width:200px 150px 0 150px;transition-delay:.3s}
 #red .triangle6{bottom:0;left:50%;margin:0;border-color:transparent transparent #bf0404 transparent;}
 #red .triangle6.activate{transition:all 600ms cubic-bezier(.25,.46,.45,.94);margin-left:-150px;border-width:0 150px 200px 150px;transition-delay:.3s}
-#yellow .rectTop{background:#0f0;top:0;left:0;height:200px;width:0;}
+#yellow .rectTop{background:#ffd800;top:0;left:0;height:200px;width:0;}
 #yellow .rectTop.activate{width:100%}
-#yellow .rectBottom{background:#0f0;bottom:0;right:0;height:200px;width:0;}
+#yellow .rectBottom{background:#ffd800;bottom:0;right:0;height:200px;width:0;}
 #yellow .rectBottom.activate{width:100%}
-#yellow .rectTop2{background:#bfff40;top:10px;right:0;height:180px;width:0;}
+#yellow .rectTop2{background:#ffee61;top:10px;right:0;height:180px;width:0;}
 #yellow .rectTop2.activate{transition:all 500ms cubic-bezier(.25,.46,.45,.94);transition-delay:.3s;width:100%}
-#yellow .rectBottom2{background:#bfff40;bottom:10px;left:0;height:180px;width:0;}
+#yellow .rectBottom2{background:#ffee61;bottom:10px;left:0;height:180px;width:0;}
 #yellow .rectBottom2.activate{transition:all 500ms cubic-bezier(.25,.46,.45,.94);transition-delay:.3s;width:100%}
-#yellow .rectTop3{background:#d0ff73;top:0;right:0;height:200px;width:0;}
+#yellow .rectTop3{background:#ecac00;top:0;right:0;height:200px;width:0;}
 #yellow .rectTop3.activate{transition:all 800ms cubic-bezier(.25,.46,.45,.94);transition-delay:.45s;width:100%}
-#yellow .rectBottom3{background:#d0ff73;bottom:0;left:0;height:200px;width:0;}
+#yellow .rectBottom3{background:#ecac00;bottom:0;left:0;height:200px;width:0;}
 #yellow .rectBottom3.activate{transition:all 800ms cubic-bezier(.25,.46,.45,.94);transition-delay:.45s;width:100%}
 #darkblue .rectTop{background:#27408b;top:0;left:0;height:0;opacity:.5;width:100%;}
 #darkblue .rectTop.activate{transition:all 700ms cubic-bezier(.25,.46,.45,.94);height:20%}
