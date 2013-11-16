@@ -1,0 +1,10 @@
+{
+    "events": [
+        {
+            "timestamp": 1381905000,
+            "demointerval": 400, 
+            "id": 1,
+            "action": "logout"
+        }
+    ]
+}

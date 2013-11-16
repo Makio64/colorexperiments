@@ -18,7 +18,7 @@
      ~::  ::I$$$$$$$$$$$$$?I:           
   ,,=:       ,::~=====~~:,              
   $Z+                                   
- =ZZI,    GOBELINS PRESENTS  
+ =ZZI,   Workshop CRMA Gobelins   
  7$$$$??~        
 ,$$$7$$$$7??=,   
 ,$$$77$$$$$$$$??~:                      
@@ -35,24 +35,15 @@
                                  =::    
                               ,,~:     
 
-   _____      _            ______                      _                      _       
-  / ____|    | |          |  ____|                    (_)                    | |      
- | |     ___ | | ___  _ __| |__  __  ___ __   ___ _ __ _ _ __ ___   ___ _ __ | |_ ___ 
- | |    / _ \| |/ _ \| '__|  __| \ \/ / '_ \ / _ \ '__| | '_ ` _ \ / _ \ '_ \| __/ __|
- | |___| (_) | | (_) | |  | |____ >  <| |_) |  __/ |  | | | | | | |  __/ | | | |_\__ \
-  \_____\___/|_|\___/|_|  |______/_/\_\ .__/ \___|_|  |_|_| |_| |_|\___|_| |_|\__|___/
-                                      | |                                             
-                                      |_|                                             
-
 ==================================================================================================
 
 Color experiments : pick a color -> get an experiment
 
 The experiments are made by Gobelins's creative dev student during a 3days workshop.
 
-They have to select a color and made an unique experiment in html5/js about it.
+They have to select a color and made an experiment in html5/js about it.
 
-Enjoy their results :)
+I hope you enjoy their results as they enjoy make it :)
 
 Github Source : https://github.com/Makio64/colorexperiments
 
@@ -76,23 +67,30 @@ Github Source : https://github.com/Makio64/colorexperiments
         <script src=" /js/vendors/modernizr-2.6.2.min.js"></script>
     </head>
     <body>
-        <div id="share">Share Twitter / Facebook</div>
+        <div id="share">
+          <!-- Twitter -->
+          <a href="https://twitter.com/share" class="twitter-share-button" data-via="makio64">Tweet</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+          <!-- Facebook -->
+          <div class="fb-like" data-href="http://colorexperiments.gobelins.fr/" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+          </div>
         
         <!-- Classic css -->
+        <header></header>
         <div id="global">
           <h1>COLOR EXPERIMENTS</h1>
           <h2>Pick a color get an experiments</h2>  
           <div class="bubbles">
-            <div class="color pink">
+              <!-- <div class="color pink">
                 <div class="bubble"></div>
                 <div class="bubble2"></div>
                 <div class="author">Bertrand Souriau</div>
                 <div class="title">Make Me Smile</div>
-              </div>
+              </div> -->
               <div class="color skyblue">
                 <div class="bubble"></div>
                 <div class="bubble2"></div>
-                <div class="author">Corentin</div>
+                <div class="author">Kolin Weidmann</div>
                 <div class="title">Make Me Smile</div>
               </div>
               <div class="color orange">
@@ -148,9 +146,9 @@ Github Source : https://github.com/Makio64/colorexperiments
         <div id="about">
           <div class=".title">ABOUT</div>
           <p>
-            Discover a color through an experiment, share a feeling, tell a story.<br/>
             COLOR EXPERIMENTS is the result of 3 days's workshop,<br/>
-            crafted with pasion by Gobelins CRMA dev students.<br/>
+            Made by <a target="_blank" href="http://crma2014.gobelins.fr">Gobelins CRMA</a> dev students and directed by <a target="_blank" href="https://twitter.com/makio64">@Makio64</a>.<br/>
+            Checkout the <a target="_blank" href="http://makiopolis.com/gobelins/">workshop's slides</a> and watch <a target="_blank" href="https://github.com/Makio64/colorexperiments">the source on Github</a><br/>
           <p>
         </div>   
 
@@ -264,5 +262,14 @@ Github Source : https://github.com/Makio64/colorexperiments
         <script src="js/vendors/pixijs/pixi.js"></script>
         -->
         <script src="js/main.js"></script>
+        <!-- Facebook -->
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/fr_FR/all.js#xfbml=1&appId=220813356385";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
     </body>
 </html>

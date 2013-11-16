@@ -1,0 +1,12 @@
+@import "compass/reset";
+
+$icon-font-path: "/bower_components/sass-bootstrap/fonts/";
+
+$as-font: "Tangerine";
+$as-color: #D95F80;
+
+// IMPORT SCSS FILES
+@import "sass-bootstrap/lib/bootstrap";
+@import "application.css.scss";
+@import "home.css.scss";
+@import "experience.css.scss";

@@ -1,0 +1,121 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>creative eperiments</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <!-- build:css(.tmp) styles/main.css -->
+        <link rel="stylesheet" href="styles/main.css">
+        <!-- endbuild -->
+    </head>
+    <body>
+        <div id="scene3D">
+        </div>
+        <div class="loadingBackground">
+        </div>
+        <div class="loadingContainer">
+            <img class="loadingNormal" src="images/viruslogo.png">
+        </div>
+ 
+
+        <!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+        <!-- build:js scripts/vendor.js -->
+        <!-- bower:js -->
+        <script src="scripts/libs/jquery.min.js"></script>
+        <script src="scripts/libs/three.min.js"></script>
+        <script src="scripts/libs/TweenMax.min.js"></script>
+        <script src="scripts/libs/soundmanager2-jsmin.js"></script>
+        <script src="scripts/libs/stats.js"></script>
+        <script src="scripts/libs/dat.gui.min.js"></script>
+        <!-- endbower -->
+        <!-- endbuild -->
+
+        <script src="scripts/shaders/ConvolutionShader.js"></script>
+        <script src="scripts/shaders/CopyShader.js"></script>
+        <script src="scripts/shaders/FilmShader.js"></script>
+
+        <script src="scripts/shaders/EffectComposer.js"></script>
+        <script src="scripts/postprocessing/ShaderPass.js"></script>
+        <script src="scripts/postprocessing/MaskPass.js"></script>
+        <script src="scripts/postprocessing/RenderPass.js"></script>
+        <script src="scripts/postprocessing/BloomPass.js"></script>
+        <script src="scripts/postprocessing/FilmPass.js"></script>
+
+        <!-- build:js scripts/main.js -->
+        <script id="fragmentShader" type="x-shader/x-fragment">
+
+            uniform float time;
+            uniform vec2 resolution;
+
+            uniform float fogDensity;
+            uniform vec3 fogColor;
+
+            uniform sampler2D texture1;
+            uniform sampler2D texture2;
+
+            varying vec2 vUv;
+
+            void main( void ) {
+
+                vec2 position = -1.0 + 2.0 * vUv;
+
+                vec4 noise = texture2D( texture1, vUv );
+                vec2 T1 = vUv + vec2( 1.5, -1.5 ) * time  *0.02;
+                vec2 T2 = vUv + vec2( -0.5, 2.0 ) * time * 0.01;
+
+                T1.x += noise.x * 0.2;
+                T1.y += noise.y * 2.0;
+                T2.x -= noise.y * 0.2;
+                T2.y += noise.z * 0.2;
+
+                float p = texture2D( texture1, T1 * 2.0 ).a;
+
+                vec4 color = texture2D( texture2, T2 * 2.0 );
+                vec4 temp = color * ( vec4( p, p, p, p ) * 2.0 ) + ( color * color - 0.1 );
+
+                if( temp.r > 1.0 ){ temp.bg += clamp( temp.r - 2.0, 0.0, 100.0 ); }
+                if( temp.g > 1.0 ){ temp.rb += temp.g - 1.0; }
+                if( temp.b > 1.0 ){ temp.rg += temp.b - 1.0; }
+
+                gl_FragColor = temp;
+
+                float depth = gl_FragCoord.z / gl_FragCoord.w;
+                const float LOG2 = 1.442695;
+                float fogFactor = exp2( - fogDensity * fogDensity * depth * depth * LOG2 );
+                fogFactor = 1.0 - clamp( fogFactor, 0.0, 1.0 );
+
+                gl_FragColor = mix( gl_FragColor, vec4( fogColor, gl_FragColor.w ), fogFactor );
+
+            }
+        </script>
+        <script id="vertexShader" type="x-shader/x-vertex">
+
+            uniform vec2 uvScale;
+            varying vec2 vUv;
+
+            void main()
+            {
+
+                vUv = uvScale * uv;
+                vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
+                gl_Position = projectionMatrix * mvPosition;
+
+            }
+
+        </script>
+        <script src="scripts/GlobalConfig.js"></script>
+        <script src="scripts/Cell.js"></script>
+        <script src="scripts/main.js"></script>
+        <!-- endbuild -->
+</body>
+</html>

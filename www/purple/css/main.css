@@ -1,0 +1,43 @@
+html{
+    background: black;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family : "Kabel", "Helvetica", sans-serif;
+}
+
+canvas{
+    display:block;
+    background-color: black;
+}
+
+#start {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+}
+
+#start p {
+    font-size: 50px;
+    color: #fff;
+   text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #8B3DCA, 0 0 30px #8B3DCA, 0 0 40px #8B3DCA, 0 0 50px #8B3DCA, 0 0 75px #8B3DCA;
+   letter-spacing: 5px;
+   text-align: center;
+   opacity: 0;
+   text-transform: uppercase;
+}
+
+.line {
+    background-color: #fff;
+    width: 60%;
+    height: 1px;
+    box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #8B3DCA, 0 0 30px #8B3DCA, 0 0 40px #8B3DCA, 0 0 50px #8B3DCA, 0 0 75px #8B3DCA;
+    position:relative;
+    left: 20%;
+}
+
+#start:hover {
+    cursor: pointer;
+}

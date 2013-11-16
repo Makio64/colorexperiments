@@ -10,13 +10,15 @@ Main = (function() {
 
   Main.prototype.pause = false;
 
+  Main.prototype.iframe = null;
+
   function Main() {
     this.animate = __bind(this.animate, this);
+    this.initColor = __bind(this.initColor, this);
     var color, colors, _i, _len;
     this.pause = false;
     this.lastTime = Date.now();
     window.focus();
-    requestAnimationFrame(this.animate);
     colors = ["pink", "yellow", "orange", "red", "green", "purple", "white", "darkblue", "skyblue", "grey"];
     for (_i = 0, _len = colors.length; _i < _len; _i++) {
       color = colors[_i];
@@ -26,12 +28,35 @@ Main = (function() {
   }
 
   Main.prototype.initColor = function(color) {
-    return $("." + color).mouseover(function(e) {
-      $("#" + color + " div").addClass("activate");
-      return $("." + color + " div").addClass("activate");
+    var _this = this;
+    $("." + color).mouseover(function(e) {
+      if (_this.iframe === null) {
+        $("#" + color + " div").addClass("activate");
+        return $("." + color + " div").addClass("activate");
+      }
     }).mouseout(function(e) {
       $("#" + color + " div").removeClass("activate");
       return $("." + color + " div").removeClass("activate");
+    }).click(function(e) {
+      if (_this.iframe) {
+        document.body.removeChild(_this.iframe);
+        _this.iframe = null;
+      } else {
+        $("#" + color + " div").removeClass("activate");
+        $("." + color + " div").removeClass("activate");
+        $("header, h1, h2, #global").addClass("activate");
+        $(".bubble, .bubble2").addClass("mini");
+        $("#about").remove();
+      }
+      _this.iframe = document.createElement("IFRAME");
+      _this.iframe.setAttribute("src", "./" + color);
+      _this.iframe.style.position = "absolute";
+      _this.iframe.style.bottom = 0;
+      _this.iframe.style.left = 0;
+      _this.iframe.style.zIndex = 100;
+      _this.iframe.style.width = window.innerWidth + "px";
+      _this.iframe.style.height = (window.innerHeight - 50) + "px";
+      return document.body.appendChild(_this.iframe);
     });
   };
 
@@ -43,7 +68,6 @@ Main = (function() {
       this.lastTime = t;
       return;
     }
-    requestAnimationFrame(this.animate);
     t = Date.now();
     dt = t - this.lastTime;
     this.lastTime = t;
@@ -53,6 +77,10 @@ Main = (function() {
     var height, width;
     width = window.innerWidth;
     height = window.innerHeight;
+    if (this.iframe) {
+      this.iframe.style.width = width + "px";
+      this.iframe.style.height = (height - 50) + "px";
+    }
   };
 
   return Main;
@@ -63,11 +91,9 @@ $(document).ready(function() {
   var _this = this;
   main = new Main();
   $(window).blur(function() {
-    main.pause = true;
-    return cancelAnimationFrame(main.animate);
+    return main.pause = true;
   });
   $(window).focus(function() {
-    requestAnimationFrame(main.animate);
     main.lastTime = Date.now();
     return main.pause = false;
   });

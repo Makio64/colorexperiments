@@ -1,0 +1,97 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>webGL</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css(.tmp) styles/main.css -->
+  <link href='http://fonts.googleapis.com/css?family=Tangerine' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
+  <!-- build:js scripts/vendor/modernizr.js -->
+  <script src="./bower_components/modernizr/modernizr.js"></script>
+  <!-- endbuild -->
+</head>
+<body>
+  <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+
+ <div id="application">
+  <div id="home" class="hide">
+    <div class="container">
+
+      <h3 class="home__title">Ma première rencontre</h3>
+
+      <h4 class="home__title-was">était avec...</h3>
+      <div class="clearfix home__links">
+        <a href="#" data-nav-id="experience" data-nav-params="boy" class="home__circle boy link__internal"></a>
+        <a href="#" data-nav-id="experience" data-nav-params="girl" class="home__circle girl link__internal"></a>
+      </div>
+    </div>
+  </div>
+  <!-- GOGOGO MA BICHE ENVOI DU LOURD -->
+  <div id="experience" class="hide">
+
+    <div class="container">
+
+      <h3 class="experience__title">Chaque rencontre débute toujours par un timide sourire</h3>
+      <div class="boy__face" id="boy_face"></div>
+    </div>
+
+    <div id="experience-camera-smile"></div>
+    <div id="experience-canvas"></div>
+  </div>
+ </div>
+
+ <!-- <canvas id="canvas-background"></canvas> -->
+ 
+<!-- BACKRGOUND SHADER -->
+<script id="vs" type="x-shader/vertex">
+  attribute vec3 position;
+
+  void main() {
+    gl_Position = vec4( position, 1.0 );
+  }
+</script>
+<script id="fs" type="x-shader/fragment">
+        #ifdef GL_ES
+        precision highp float;
+        #endif
+
+  uniform float time;
+  uniform vec2 resolution;
+
+  void main( void ) {
+    vec2 position = - 1.0 + 2.0 * gl_FragCoord.xy / resolution.xy;
+    float red = abs( sin( position.x * position.y + time / 5.0 ) );
+    float green = abs( sin( position.x * position.y + time / 4.0 ) );
+    float blue = abs( sin( position.x * position.y + time / 3.0 ) );
+    //gl_FragColor = vec4( red, green, blue, 1.0 );
+    //gl_FragColor = vec4( 0.2f, 0.1f, 1.0f, 1.0 );
+    gl_FragColor = vec4( 10.0, green, 250.0, 0.1);
+  }
+</script>
+
+  <!-- build:js scripts/vendor.js -->
+  <!-- bower:js -->
+  <script src="./bower_components/stats.js/build/stats.min.js"></script>
+  <script src="./bower_components/jquery/jquery.js"></script>
+  <script src="./bower_components/pixi/bin/pixi.js"></script>
+  <script src="./libs/js/pixi-extra-graphics.js"></script>
+  <script src="./bower_components/greensock-js/src/minified/TweenMax.min.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:js scripts/main.js -->
+  <script data-main="scripts/main" src="./bower_components/requirejs/require.js"></script>
+  <!-- endbuild -->
+</body>
+</html>

@@ -1,0 +1,136 @@
+
+body {
+	background: #550202;
+	padding: 0;
+	margin: 0;
+}
+
+#background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#graph {
+	position: absolute;
+	z-index: 998;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+#date {
+	position: absolute;
+	background-color: #C6B299;
+	z-index: 999;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 60px;
+	font-family: arial;
+	font-size: 20px;
+	color: #FFF4E3;
+	text-align: center;
+	padding: 40px 0 20px 0;
+	opacity: 0.8;
+}
+
+/*
+.circle {
+	fill: #FFF4E3;
+}
+*/
+
+.me {
+	fill: url(#profil-me);
+	cursor: pointer;
+}
+
+.hidden {
+	opacity: 0;
+}
+
+.off {
+	-webkit-animation-name: off;
+  	-webkit-animation-duration: 1s;
+  	-webkit-animation-iteration-count: 1;
+  	-webkit-animation-timing-function: ease-in-out;
+  	-webkit-animation-fill-mode: forwards;
+}
+
+.on {
+	-webkit-animation-name: on;
+  	-webkit-animation-duration: 1s;
+  	-webkit-animation-iteration-count: 1;
+  	-webkit-animation-timing-function: ease-in-out;
+  	-webkit-animation-fill-mode: forwards;
+}
+
+/* found solution for anim */
+@-webkit-keyframes on {
+	100% { -webkit-transform-origin: 50% 50%; -webkit-transform: scale(1); fill: #FFF4E3; opacity: 0.8; }
+	50% { -webkit-transform-origin: 50% 50%; -webkit-transform: scale(1); fill: #FFF4E3; opacity: 0.5; }
+	0% { -webkit-transform-origin: 50% 50%; -webkit-transform: scale(1); fill: #FFF4E3; opacity: 0; }
+}
+
+.breath {
+	-webkit-animation: breath 4s infinite ease-in-out;
+	opacity: 0.8;
+}
+
+@-webkit-keyframes breath {
+	50% { -webkit-transform: scale(1.04); -webkit-transform-origin: 50% 50%; }
+}
+
+.bigbreath {
+	-webkit-animation: bigbreath 3s ease-in-out;
+}
+
+.vibrates {
+	-webkit-animation-name: spaceboots;
+	-webkit-animation-duration: 2s;
+	-webkit-transform-origin:50% 50%;
+	-webkit-animation-timing-function: linear;
+}
+
+.relation {
+	stroke-width: 4;
+	stroke-dasharray: 0.2,10;
+	stroke-linecap: round;
+	stroke: #FFF4E3;
+}
+
+.friend {
+	
+}
+
+@-webkit-keyframes off {
+	100% { fill-opacity: 0.3; fill: #31302F; }
+	80% { fill-opacity: 0.3; }
+	20% { fill: #31302F; }
+}
+
+
+
+
+
+@-webkit-keyframes bigbreath {
+	50% { -webkit-transform: scale(1.4); -webkit-transform-origin: 50% 50%; }
+}
+
+@-webkit-keyframes spaceboots {
+	0% { -webkit-transform: translate(2px, 1px) rotate(0deg); }
+	10% { -webkit-transform: translate(-1px, -2px) rotate(-1deg); }
+	20% { -webkit-transform: translate(-3px, 0px) rotate(1deg); }
+	30% { -webkit-transform: translate(0px, 2px) rotate(0deg); }
+	40% { -webkit-transform: translate(1px, -1px) rotate(1deg); }
+	50% { -webkit-transform: translate(-1px, 2px) rotate(-1deg); }
+	60% { -webkit-transform: translate(-3px, 1px) rotate(0deg); }
+	70% { -webkit-transform: translate(2px, 1px) rotate(-1deg); }
+	80% { -webkit-transform: translate(-1px, -1px) rotate(1deg); }
+	90% { -webkit-transform: translate(2px, 2px) rotate(0deg); }
+	100% { -webkit-transform: translate(1px, -2px) rotate(-1deg); }
+}

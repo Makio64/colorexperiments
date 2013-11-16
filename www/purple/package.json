@@ -1,0 +1,16 @@
+{
+  "name": "Experiment-Boilerplate",
+  "version": "0.3.2",
+  "description": "a HTML/JS Boilerplate for creating canvas experiments.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ayamflow/Experiment-Boilerplate.git"
+  },
+  "author": "Florian Morel",
+  "bugs": {
+    "url": "https://github.com/ayamflow/Experiment-Boilerplate/issues"
+  },
+  "devDependencies": {
+    "grunt-contrib-connect": "~0.5.0"
+  }
+}
