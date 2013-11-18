@@ -440,7 +440,7 @@
       volume: 0.5,
       buffer: true,
       loop: true
-    });
+    }).play();
     breath0 = new Howl({
       urls: ['breath0.wav'],
       buffer: true,
