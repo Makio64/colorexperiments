@@ -1,6 +1,6 @@
 body,html{width:100%;height:100%;min-height:100%;background:#fafafa;color:#2b2b2b;font-family:'Abel',Helvetica,sans-serif;font-variant:normal;font-weight:300;overflow:hidden}
 #twitter-widget-0{margin-right:-20px}
-#share{position:absolute;width:300px;overflow:auto;top:0;right:10px;z-index:9;text-align:right;padding:10px}
+#share{position:absolute;width:300px;overflow:visible;top:0;right:10px;z-index:999;text-align:right;padding:10px}
 #global{position:absolute;top:50%;left:50%;margin-top:-75px;margin-left:-236px;height:150px;width:472px;z-index:10;}
 #global.activate{top:20px}
 header{position:absolute;top:-50px;left:0;height:50px;width:100%;z-index:8;background:#fff;}
