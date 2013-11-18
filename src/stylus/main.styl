@@ -15,6 +15,7 @@ skyblueLight = #73DCFF
 skyblueDark = #00BFFF
 darkblue = #27408B
 purple = #443266
+darkpuple = #866EB3
 
 transition()
 	-webkit-transition: arguments
@@ -783,28 +784,28 @@ h2
 		&.activate
 			margin-top radius*-1px
 			margin-left radius*-1.5px
-			transition( all 500ms cubic-bezier(0.250, 0.460, 0.450, 0.940)); /* easeOutQuad */
+			transition( all 600ms cubic-bezier(0.250, 0.460, 0.450, 0.940)); /* easeOutQuad */
 	.circle2
 		bottom 50%
 		right 0
 		&.activate
 			margin-bottom radius*-1px
 			margin-right radius*-1.5px
-			transition( all 500ms cubic-bezier(0.250, 0.460, 0.450, 0.940)); /* easeOutQuad */
+			transition( all 600ms cubic-bezier(0.250, 0.460, 0.450, 0.940)); /* easeOutQuad */
 	.circle3
 		top 0
 		right 50%
 		&.activate
 			margin-top radius*-1.5px
 			margin-right radius*-1px
-			transition( all 500ms cubic-bezier(0.250, 0.460, 0.450, 0.940)); /* easeOutQuad */
+			transition( all 600ms cubic-bezier(0.250, 0.460, 0.450, 0.940)); /* easeOutQuad */
 	.circle4
 		bottom 0
 		left 50%
 		&.activate
 			margin-bottom radius*-1.5px
 			margin-left radius*-1px
-			transition( all 500ms cubic-bezier(0.250, 0.460, 0.450, 0.940)); /* easeOutQuad */
+			transition( all 600ms cubic-bezier(0.250, 0.460, 0.450, 0.940)); /* easeOutQuad */
 
 	radius = 60
 
@@ -815,7 +816,7 @@ h2
 		&.activate
 			margin-top radius*-1px
 			margin-left radius*-1.5px
-			transition( all 500ms cubic-bezier(0.250, 0.460, 0.450, 0.940)); /* easeOutQuad */
+			transition( all 600ms cubic-bezier(0.250, 0.460, 0.450, 0.940)); /* easeOutQuad */
 	.circle6
 		background #FAFAFA
 		bottom 50%
@@ -823,7 +824,7 @@ h2
 		&.activate
 			margin-bottom radius*-1px
 			margin-right radius*-1.5px
-			transition( all 500ms cubic-bezier(0.250, 0.460, 0.450, 0.940)); /* easeOutQuad */
+			transition( all 600ms cubic-bezier(0.250, 0.460, 0.450, 0.940)); /* easeOutQuad */
 	.circle7
 		background #FAFAFA
 		top 0
@@ -831,7 +832,7 @@ h2
 		&.activate
 			margin-top radius*-1.5px
 			margin-right radius*-1px
-			transition( all 500ms cubic-bezier(0.250, 0.460, 0.450, 0.940)); /* easeOutQuad */
+			transition( all 600ms cubic-bezier(0.250, 0.460, 0.450, 0.940)); /* easeOutQuad */
 	.circle8
 		background #FAFAFA
 		bottom 0
@@ -839,4 +840,44 @@ h2
 		&.activate
 			margin-bottom radius*-1.5px
 			margin-left radius*-1px
-			transition( all 500ms cubic-bezier(0.250, 0.460, 0.450, 0.940)); /* easeOutQuad */
+			transition( all 600ms cubic-bezier(0.250, 0.460, 0.450, 0.940)); /* easeOutQuad */
+
+	radius = 200
+
+	.circle9
+		background darkpuple
+		top 50%
+		left 0
+		&.activate
+			margin-top radius*-1.05px
+			margin-left radius*-1.45px
+			transition( all 600ms cubic-bezier(0.175, 0.885, 0.320, 1.275)); /* easeOutBack */
+			transition-delay: 0.05s;
+	.circle10
+		background darkpuple
+		bottom 50%
+		right 0
+		&.activate
+			margin-bottom radius*-1.05px
+			margin-right radius*-1.45px
+			transition( all 600ms cubic-bezier(0.175, 0.885, 0.320, 1.275)); /* easeOutBack */
+			transition-delay: 0.05s;
+	.circle11
+		background darkpuple
+		top 0
+		right 50%
+		&.activate
+			margin-top radius*-1.45px
+			margin-right radius*-1.05px
+			transition( all 600ms cubic-bezier(0.175, 0.885, 0.320, 1.275)); /* easeOutBack */
+			transition-delay: 0.05s;
+	.circle12
+		background darkpuple
+		bottom 0
+		left 50%
+		&.activate
+			margin-bottom radius*-1.45px
+			margin-left radius*-1.05px
+			transition( all 600ms cubic-bezier(0.175, 0.885, 0.320, 1.275)); /* easeOutBack */
+			transition-delay: 0.05s;
+

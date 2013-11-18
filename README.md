@@ -23,7 +23,7 @@ Student / Color :
 - Alexandre Toudic ([Github](https://github.com/AlexToudic), [Twitter](https://twitter.com/Alex_Toudic)) / Yellow
 - Kolin Weidmann ([Github](https://github.com/kolinw), [Twitter](https://twitter.com/kolin_w)) / Sky Blue
 - Corentin Bac ([Github](https://github.com/CorentinBac))/ Dark Blue
-- Clément Chenebault / Orange
+- Clément Chenebault ([Github](https://github.com/clementchenebault/), [Twitter](https://twitter.com/ClChenebault_vL)) / Orange
 - Damien Seguin ([Github](https://github.com/DamienSeguin), [Twitter](https://twitter.com/damienseguinme)) / White
 
 
