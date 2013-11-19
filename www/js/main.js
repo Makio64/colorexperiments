@@ -33,10 +33,15 @@ Main = (function() {
       if (_this.iframe === null) {
         $("#" + color + " div").addClass("activate");
         return $("." + color + " div").addClass("activate");
+      } else {
+        $("." + color).addClass("reveal");
+        return $('header').addClass("" + color);
       }
     }).mouseout(function(e) {
       $("#" + color + " div").removeClass("activate");
-      return $("." + color + " div").removeClass("activate");
+      $("." + color + " div").removeClass("activate");
+      $("." + color).removeClass("reveal");
+      return $('header').removeClass("" + color);
     }).click(function(e) {
       if (_this.iframe) {
         document.body.removeChild(_this.iframe);
