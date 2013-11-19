@@ -42,7 +42,7 @@ body , html
 	position absolute
 	width 300px
 	overflow visible
-	top 0 
+	top 0
 	right 10px
 	z-index 999
 	text-align right
@@ -55,9 +55,9 @@ body , html
 	margin-top -75px
 	margin-left -236px
 	height 150px
-	width 472px
+	// width 472px
 	z-index 10
-	// transition(all .6s)
+	transition(margin-left .6s)
 	&.activate
 		top 20px
 
@@ -69,10 +69,31 @@ header
 	width 100%
 	z-index 8
 	background #FFF
-	// transition(all .3s)
+	transition(background .3s)
 	// transition-delay .3s
 	&.activate
 		top 0
+
+		&.pink
+			background pink
+		&.orange
+			background orange
+		&.yellow
+			background yellow
+		&.red
+			background red
+		&.grey
+			background grey
+		&.white
+			background white
+		&.green
+			background green
+		&.purple
+			background purple
+		&.skyblue
+			background skyblue
+		&.darkblue
+			background darkblue
 
 h1
 	margin 0 auto 6px auto
@@ -122,8 +143,10 @@ h2
 .title
 	opacity .6
 	font-size 16px
+	font-weight bold
 	padding 10px
 	text-align center
+
 
 .color
 	position relative
@@ -145,6 +168,7 @@ h2
 		width 30px
 		height 30px
 		display block
+		transition(opacity .4s)
 		&.mini
 			top 20px
 			left 20px
@@ -164,7 +188,7 @@ h2
 		left 25px
 		width 0
 		height 0
-		&.activate	
+		&.activate
 			top 0
 			left 0
 			width 50px
@@ -178,27 +202,97 @@ h2
 			top 15px
 			left 15px
 
-	&.pink .bubble
-		background pink
-	&.orange .bubble
-		background orange
-	&.yellow .bubble
-		background yellow
-	&.red .bubble
-		background red
-	&.grey .bubble
-		background grey
-	&.white .bubble
-		background white
-	&.green .bubble
-		background green
-	&.purple .bubble
-		background purple
-	&.skyblue .bubble
-		background skyblue
-	&.darkblue .bubble
-		background darkblue
-	
+	&.pink
+		.title
+			color #655917
+		.author
+			color #ac9d48
+		.bubble
+			background pink
+	&.orange
+		.title
+			color #61451a
+		.author
+			color #fcd293
+		.bubble
+			background orange
+	&.yellow
+		.title
+			color #655917
+		.author
+			color #ac9d48
+		.bubble
+			background yellow
+	&.red
+		.title
+			color #6a1919
+		.author
+			color #de9b9b
+		.bubble
+			background red
+	&.grey
+		.title
+			color #466c7f
+		.author
+			color #98abb4
+		.bubble
+			background grey
+	&.white
+		.title
+			color #515151
+		.author
+			color #b3b3b3
+		.bubble
+			background white
+	&.green
+		.title
+			color #386f22
+		.author
+			color #a0fd7c
+		.bubble
+			background green
+	&.purple
+		.title
+			color #14082b
+		.author
+			color #856db1
+		.bubble
+			background purple
+	&.skyblue
+		.title
+			color #126783
+		.author
+			color #aceaff
+		.bubble
+			background skyblue
+	&.darkblue
+		.title
+			color #0b1a44
+		.author
+			color #6a7db6
+		.bubble
+			background darkblue
+
+.color
+	transition(width 1.0s ease)
+
+.reveal
+	width 220px
+	overflow hidden
+
+	.identity
+		width 220px
+		margin-top 5px
+		display block
+
+		div.title, div.author
+			font-family Helvetica
+			font-size 11px
+			display block
+			text-align center
+			text-transform uppercase
+			padding-bottom 0
+
 
 .circle
 	border-radius 50%
@@ -245,7 +339,7 @@ h2
 		border-color  transparent orange transparent transparent
 		&.activate
 			transition( all 800ms cubic-bezier(0.175, 0.885, 0.320, 1.275)); /* easeOutBack */
-			border-width 0 400px 400px 0 
+			border-width 0 400px 400px 0
 
 	.triangle4
 		bottom 0
@@ -477,7 +571,7 @@ h2
 		&.activate
 			transition( all 1000ms cubic-bezier(0.175, 0.885, 0.320, 1.275)); /* easeOutBack */
 			border-width 400px 400px 0 0
-	
+
 	.triangle2
 		bottom 0
 		right 0
@@ -501,7 +595,7 @@ h2
 		&.activate
 			transition( all 1000ms cubic-bezier(0.175, 0.885, 0.320, 1.275)); /* easeOutBack */
 			border-width 0 0 420px 420px
-	
+
 	.triangle5
 		top 0
 		left 0
@@ -534,7 +628,7 @@ h2
 			margin-top -799px
 			border-width 0 800px 800px 800px
 			margin-left -800px
-	
+
 	.triangle2
 		top 50%
 		left 50%
@@ -554,10 +648,10 @@ h2
 			border-width 0 400px 400px 400px
 			margin-left -400px
 			transition-delay: 0.15s;
-	
+
 	.triangle4
 		top 50%
-		left 50% 
+		left 50%
 		border-color  #FAFAFA transparent transparent transparent;
 		&.activate
 			transition( all 600ms cubic-bezier(0.295, 0.360, 0.095, 0.990)); /* custom */
@@ -581,7 +675,7 @@ h2
 	.triangle2
 		bottom 0
 		left 50%
-		margin 0		
+		margin 0
 		border-color transparent transparent red transparent
 		&.activate
 			transition( all 600ms cubic-bezier(0.250, 0.460, 0.450, 0.940)); /* easeOutQuad */
@@ -602,7 +696,7 @@ h2
 	.triangle4
 		bottom 0
 		left 50%
-		margin 0		
+		margin 0
 		border-color transparent transparent #FAFAFA transparent
 		&.activate
 			transition( all 600ms cubic-bezier(0.250, 0.460, 0.450, 0.940)); /* easeOutQuad */
@@ -624,7 +718,7 @@ h2
 	.triangle6
 		bottom 0
 		left 50%
-		margin 0		
+		margin 0
 		border-color transparent transparent red transparent
 		&.activate
 			transition( all 600ms cubic-bezier(0.250, 0.460, 0.450, 0.940)); /* easeOutQuad */

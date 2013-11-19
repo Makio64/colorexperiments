@@ -8,13 +8,13 @@ class Main
 
 	iframe			: null
 
-	constructor:()->		
+	constructor:()->
 		@pause = false
 		@lastTime = Date.now()
 		window.focus()
 		# requestAnimationFrame( @animate )
 
-		# Entry Point 
+		# Entry Point
 		colors = ["pink","yellow","orange","red","green","purple","white","darkblue","skyblue","grey"]
 		for color in colors
 			@initColor(color)
@@ -26,9 +26,17 @@ class Main
 			if @iframe == null
 				$("##{color} div").addClass("activate")
 				$(".#{color} div").addClass("activate")
+			else
+				$(".#{color}").addClass("reveal")
+				# class = "#{color}"
+				# console.log(class);
+				$('header').addClass("#{color}")
+
 		).mouseout((e)=>
 			$("##{color} div").removeClass("activate")
 			$(".#{color} div").removeClass("activate")
+			$(".#{color}").removeClass("reveal")
+			$('header').removeClass("#{color}")
 		).click((e)=>
 			if @iframe
 				document.body.removeChild(@iframe)
@@ -52,7 +60,7 @@ class Main
 		return
 
 	animate:()=>
-		
+
 		if @pause
 			t = Date.now()
 			dt = t - @lastTime
@@ -81,7 +89,7 @@ class Main
 
 $(document).ready ->
 	main = new Main()
-	
+
 	$(window).blur(()->
 		main.pause = true
 		# cancelAnimationFrame(main.animate)
